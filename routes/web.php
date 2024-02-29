@@ -15,13 +15,9 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::middleware(['throttle:ip'])->group(function(){
-    Route::get('/test2',[TestController::class,'index2']);
-});
 Route::middleware('session.rate_limiter')->group(function(){
-    Route::match(['get','post'],'/test',[TestController::class,'index']);
+    Route::match(['get','post'],'/',[TestController::class,'index']);
 });
-// Route::get('/test',[TestController::class,'index']);
-Route::get('/', function () {
+Route::get('/test', function () {
     return view('welcome');
 });
