@@ -17,9 +17,26 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                background-color:#d9e9f7;
             }
             .alert{
                 margin-bottom:0px;
+            }
+            .middle-block{
+                height:250px;
+                width:300px;
+                display:flex;
+                flex-direction:column;
+                justify-content:space-evenly;
+                background-color:#9dbbe3;
+                border-radius:25px;
+                padding:30px;
+            }
+            .button{
+                width:100%;
+            }
+            .btn{
+                border-radius: 2.25rem;
             }
         </style>
     </head>
@@ -36,13 +53,13 @@
             @endif
 
             @if(!empty($showSession))
-            <div class="relative flex items-top justify-center bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0" style="font-size:x-large">
+            <div class="relative flex items-top justify-center sm:items-center py-4 sm:pt-0" style="font-size:x-large">
                 Your Session IP Address : {{$showSession}}
             </div>
             @endif
         <form action="" method="post" id="myForm">
         @csrf
-        <div class="relative flex items-top justify-center sm:items-center bg-gray-100 dark:bg-gray-900  py-4 sm:pt-0" style="min-height:50vh">
+        <div class="relative flex items-top justify-center sm:items-center  py-4 sm:pt-0" style="min-height:50vh">
             
 
 
@@ -61,12 +78,12 @@
                 </div>
             @endif
 
-                <div class="max-w-6xl m-auto">
-                    <div class="flex  pt-8 ">
+                <div class="max-w-6xl m-auto ">
+                    <div class="flex  pt-8 middle-block">
                         <input type="hidden" name="session_type" id="session_type">
-                        <div style="width:300px"><button class="btn btn-primary create-new-session" id="new" type="button">Create new Session</button></div>
-                        <div style="width:300px"><button class="btn btn-primary create-new-session" id="termnew" type="button">Terminate previous and Create new Session</button></div>
-                        <div style="width:300px"class="text-end" ><button class="btn btn-primary create-new-session" id="term" type="button">Terminate  Session</button></div>
+                        <button class="btn btn-primary create-new-session" id="new" type="button">Create new Session</button>
+                        <button class="btn btn-primary create-new-session" id="termnew" type="button">Terminate previous and Create new Session</button>
+                        <button class="btn btn-primary create-new-session" id="term" type="button">Terminate  Session</button>
                     </div>
                 </div>
         </div>
